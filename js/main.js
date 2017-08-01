@@ -1,7 +1,3 @@
-/**
- * AngularJS Tutorial 1
- * @author Nick Kaye <nick.c.kaye@gmail.com>
- */
 
 /**
  * Main AngularJS Web Application
@@ -18,7 +14,7 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when('/', { templateUrl: 'partials/home.html', controller: 'PageCtrl' })
 
     // Login
-    .when('/login', { templateUrl: 'partials/login.html', controller: 'PageCtrl' })
+    .when('/login', { templateUrl: 'partials/login.html', controller: 'LoginCtrl' })
 
     // Pages
     .when('/about', { templateUrl: 'partials/about.html', controller: 'PageCtrl' })
@@ -34,6 +30,26 @@ app.config(['$routeProvider', function ($routeProvider) {
     // else 404
     .otherwise('/404', { templateUrl: 'partials/404.html', controller: 'PageCtrl' });
 }]);
+
+
+
+/**
+ * Controls the Login and Signup Features
+ */
+app.controller('LoginCtrl', function ($scope) {
+    console.log('Login Controller reporting for duty.');
+
+    $scope.username = 'karan@hireme.com';
+    $scope.password = 'worstpwever';
+
+    $scope.rando = function () {
+        console.log('Printed the rando statement');
+    };
+
+});
+
+
+
 
 /**
  * Controls the Blog
